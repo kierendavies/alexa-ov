@@ -1,3 +1,5 @@
+LAMBDA_FUNCTION_NAME=alexa-ov
+
 .PHONY: all clean build deploy test
 
 all: test
@@ -15,7 +17,7 @@ clean:
 
 deploy: build/main.zip
 	aws lambda update-function-code \
-		--function-name=alexa-ov \
+		--function-name=${LAMBDA_FUNCTION_NAME} \
 		--zip-file=fileb://build/main.zip
 
 test: build/main
