@@ -24,11 +24,11 @@ func init() {
 }
 
 type TimingPoint struct {
-	Passes map[string]Pass //`json:"Passes"`
+	Passes map[string]Pass
 }
 
 type Pass struct {
-	ExpectedArrivalTime time.Time //time.Time //`json:"ExpectedArrivalTime"`
+	ExpectedArrivalTime time.Time
 }
 
 func (pass *Pass) UnmarshalJSON(data []byte) error {
